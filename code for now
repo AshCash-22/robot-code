@@ -1,28 +1,37 @@
-def __init__(self):
-        self.gopigo3 = EasyGoPiGo3()
-        self.gopigo3set_speed(300)
-        self.bpm = 113
-        self.beat = 60 / self.bpm
- print("Part 1 starting!")
-            self.gopigo3spin_left()                
-            sleep(beat * 6)
-            self.gopigo3steer(100, -70)              
-            sleep(beat * 6)
-            self.gopigo3left()                    
-            sleep(beat * 6)
-            self.gopigo3right()                      
-            sleep(beat * 6)
-            self.gopigo3.right()                      
-            sleep(beat * 6)
-            self.gopigo3right()                   
-            sleep(beat * 6)
-            self.gopigo3right()                   
-            sleep(beat * 6)
-            self.gopigo3.left()                   
-            sleep(beat * 6)
-            self.gopigo3left()                     
-            sleep(beat * 6)
-            self.gopigo3right()                     
-            sleep(beat * 6)
-            self.gopigo3left()
-            sleep(beat * 6)
+def _gopigo3_command_dance(self):
+        beat = 60/113
+        x = 0
+       
+        
+        
+        print("Dance")
+        self.gopigo3.set_speed(1000)
+        
+        
+        
+        self.gopigo3.turn_degrees(360, blocking=False)                 
+        sleep(beat * 1.5)
+        self.gopigo3.turn_degrees(-225, blocking=False)                 
+        sleep(beat * 5.5)
+        self.gopigo3.forward()
+        sleep(beat * 3)
+        self.gopigo3.turn_degrees(-100, blocking=False)  
+        sleep(beat * 1)
+        self.gopigo3.forward()
+        sleep(beat * 3.5)
+        self.gopigo3.turn_degrees(90, blocking=False)  
+        sleep(beat * 1)
+        self.gopigo3.forward()
+        sleep(beat * 3.5)
+        self.gopigo3.turn_degrees(90, blocking=False)  
+        sleep(beat * 1)
+        self.gopigo3.forward()
+        sleep(beat * 2)
+        self.gopigo3.turn_degrees(90, blocking=False) 
+        sleep(beat * 1)
+        self.gopigo3.forward()
+        sleep(beat * 1)
+        self.gopigo3.turn_degrees(100, blocking=False) 
+        #JUST MAKE IT TURN AROUND AND RETRACE STEPS RATHER THAN MAKE A NEW PATH
+        return "moving"
+    
