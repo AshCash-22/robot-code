@@ -1,4 +1,4 @@
-def _gopigo3_command_dance(self):
+  def _gopigo3_command_dance(self):
         beat = 60/113
         x = 0
        
@@ -30,18 +30,27 @@ def _gopigo3_command_dance(self):
         self.gopigo3.turn_degrees(170, blocking=False) 
         sleep(beat * 2)
         self.gopigo3.forward()
-        sleep(beat * 3)
+        sleep(beat * 2.75)
         self.gopigo3.turn_degrees(-90, blocking=False)  
         sleep(beat * 1)
         self.gopigo3.forward()
-        sleep(beat * 3)
+        sleep(beat * 2.75)
         self.gopigo3.turn_degrees(-90, blocking=False)  
         sleep(beat * 1)
         self.gopigo3.forward()
-        sleep(beat * 2)
+        sleep(beat * 2.5)
         self.gopigo3.turn_degrees(90, blocking=False)  
         sleep(beat * 0.5)
         self.gopigo3.forward()
         sleep(beat * 1)
-        self.gopigo3.turn_degrees(-90, blocking=False) 
+        self.gopigo3.turn_degrees(-90, blocking=False)
+        sleep(beat * 1.5)
+        self.gopigo3.forward()
+        sleep(beat * 2.25)
+        self.gopigo3.turn_degrees(370, blocking=False)
+        sleep(beat * 2.5)
+        self.gopigo3.forward()
+        sleep(beat * 3) #MAKE TIME SHORTER)
+        self.gopigo3.turn_degrees(370, blocking=False)
+        sleep(beat * 2.5)
         return "moving"
