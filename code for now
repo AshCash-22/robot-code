@@ -140,7 +140,13 @@
         sleep(beat * 2)
         self.gopigo3.turn_degrees(-145, blocking=False)
         sleep(beat * 2.75)
-        while n < 10:
+        while n < 7:
+          if n < 3:
+              speed = 1000 - n * 170
+          else:
+              speed = 1000 - (6 - n) * 170
+          self.gopigo3.set_speed(speed)
+
           self.gopigo.left()
           sleep(beat*1/2)
           self.gopigo.foward()
@@ -150,4 +156,5 @@
           self.gopigo.foward()
           sleep(beat*1/2)
           n+=1
+      self.gopigo3.stop()
         return "moving"
