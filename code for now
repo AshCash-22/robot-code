@@ -1,7 +1,7 @@
   def _gopigo3_command_dance(self):
         beat = 60/113
-        x = 0
-       
+        n = 0
+        
         
         
           
@@ -140,4 +140,14 @@
         sleep(beat * 2)
         self.gopigo3.turn_degrees(-145, blocking=False)
         sleep(beat * 2.75)
+        while n < 10:
+          self.gopigo.left()
+          sleep(beat*1/2)
+          self.gopigo.foward()
+          sleep(beat*1/2)
+          self.gopigo.right()
+          sleep(beat*1/2)
+          self.gopigo.foward()
+          sleep(beat*1/2)
+          n+=1
         return "moving"
