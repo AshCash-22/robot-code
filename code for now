@@ -292,43 +292,57 @@ def _gopigo3_command_dance(self):
         sleep(beat * 1)
         self.gopigo3.turn_degrees(-75, blocking=False)
         sleep(beat * 1.5)
+        self.gopigo3.set_eye_color((255,0,0))
+        self.gopigo3.open_eyes()
         self.gopigo3.turn_degrees(290, blocking=False)  
         sleep(beat * 2.5)
         self.gopigo3.forward()
         sleep(beat * 1.6)
+        self.gopigo3.set_eye_color((0,255,0))
+        self.gopigo3.open_eyes()
         self.gopigo3.turn_degrees(-380, blocking=False)
         sleep(beat * 2.65)
         self.gopigo3.forward()
         sleep(beat * 1.4)
+        self.gopigo3.set_eye_color((0,0,255))
+        self.gopigo3.open_eyes()
         self.gopigo3.turn_degrees(-380, blocking=False)
         sleep(beat * 2.65)
         self.gopigo3.forward()
         sleep(beat * 1.4)
+        self.gopigo3.set_eye_color((255,192,203))
+        self.gopigo3.open_eyes()
         self.gopigo3.turn_degrees(-390, blocking=False)
         sleep(beat * 2.75)
         self.gopigo3.turn_degrees(110, blocking=False)  
         sleep(beat * 2)
         self.gopigo3.forward()
-        sleep(beat * 2.5)
+        sleep(beat * 2.8)
+        self.gopigo3.set_eye_color((255,165,0))
+        self.gopigo3.open_eyes()
         self.gopigo3.turn_degrees(390, blocking=False)
         sleep(beat * 2.75)
         self.gopigo3.forward()
         sleep(beat * 1.6)
+        self.gopigo3.set_eye_color((128,0,128))
+        self.gopigo3.open_eyes()
         self.gopigo3.turn_degrees(380, blocking=False)
         sleep(beat * 2.65)
         self.gopigo3.forward()
         sleep(beat * 1.6)
+        self.gopigo3.set_eye_color((165,198,0))
+        self.gopigo3.open_eyes()
         self.gopigo3.turn_degrees(380, blocking=False)
         sleep(beat * 2.65)
         self.gopigo3.backward()
         sleep(beat * 2)
         self.gopigo3.turn_degrees(-145, blocking=False)
         sleep(beat * 2.75)
-        while n < 7:
-            if n < 3:
-                speed = 1000 - n * 200
+        while n < 9:
+            if n < 5:
+                speed = 1000 - n * 230
             else:
-                speed = 1000 - (6 - n) * 200
+                speed = 1000 - (6 - n) * 230
             self.gopigo3.set_speed(speed)
             
             self.gopigo3.set_eye_color((255,165,0))
@@ -352,4 +366,5 @@ def _gopigo3_command_dance(self):
             self.gopigo3.steer(100,0)
             sleep(beat*1.5)
             n+=1
+        self.gopigo3.close_eyes()
         self.gopigo3.stop()
